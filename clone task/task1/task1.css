@@ -1,0 +1,103 @@
+
+body {
+    margin: 0%; 
+    background-color: rgb(244, 244, 244); /* background color to seperate from container section */
+    display: flex; 
+    justify-content: center; /* align the contents to the center of the body */
+    align-items: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; /* A set font style for the whole website*/
+}
+
+
+header img{
+    margin: 5px;  /* space between the logo and images */  
+}
+
+.container{
+    margin: 0%; 
+    width: 1024px; /* a set width of 1024*/
+    background-color: white; /* background color set to white */
+}
+
+#images{
+    display: grid; /* using grids to align the images */
+    grid-template-columns: repeat(3, 1fr); /* set Three columns for images */
+    grid-template-rows: repeat(2, auto); /* and Two rows */
+
+}
+
+#images img{
+    margin: 0%; 
+    object-fit: contain; /* to fit the images inside the container */
+    max-width: 100%; /* width set to full to adjust itself inside the container*/
+    height: auto; 
+}
+
+#text{
+    margin: 25px; /* margin to give space between the images and text */
+    line-height: 25px; /* give space between each lines */
+}
+
+footer {
+    color: white; /* text color to white*/
+    background-color: rgb(0, 0, 0); /*background color black */
+    margin: 0; /* Remove margin */
+    height: 50px; /* add height to the footer */
+    display: flex; /* display flex to align item inside footer */
+    justify-content: center; /* align text to center horizontally */
+    align-items: center; /* align text to center vertically */
+}
+
+/* when screen is below 480px */
+@media screen and (max-width: 480px){
+    /* change logo height and width to smaller */
+    header img{
+        height: 40px;
+        width: 40px;
+    }
+    /* change the image grid into 1 coloumns */
+    #images{
+        display: grid;
+        grid-template-columns: repeat(1, 5fr); /* set images into one columns and repeat 5 times */
+    }
+    /* change text size from medium to small */
+    #text{
+        font-size: small;
+    }
+    /* change footer text size from medium to small */
+    footer{
+        font-size: small;
+    }
+}
+
+/* when screen is 481px or above and below 800px*/
+@media screen and (min-width: 481px) and (max-width: 800px){
+    
+    /* logo size changes */
+    header img{
+        height: 50px;
+        width: 50px;
+    }
+    /* image grid changes to 2 coloumns and 3 rows */
+    #images{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Two columns */
+        grid-template-rows: repeat(3, auto); /* Three rows */
+    }
+    /* text size changes */
+    #text{
+        font-size: medium;
+    }
+    /* footer text size changes */
+    footer{
+        font-size: medium;
+    }
+}
+
+/* when screen is above 800px to 1024px */
+@media screen and (min-width: 800px) and (max-width: 1024px){
+    /* all section is set to show full width */
+    section{
+        width: 100%;
+    }
+}
