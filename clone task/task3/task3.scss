@@ -1,0 +1,117 @@
+// same bg-color for header and footer 
+$headerandfooter-bg:#8ccff7; 
+
+// variables for same color used in lines and circles
+$content1-color:#4e89ae;
+$content2-color:#43658b;
+$content3-color:#ed6663;
+$content4-color:#ffa372;
+
+// variables for footer height and hover color
+$footer-height: 50px;
+$hover-color:#444;
+
+// used mixin to minize the repetition for styling the lines by giving styles which is common for every line
+// except for bg-color of the lines
+@mixin line-style($bg-color){
+    background-color: $bg-color; //bg-color is not common
+    height: 30px; //height is common value for all lines
+    width: 100%; //width also common for all lines
+    cursor: pointer; // noticed the cursor changes to pointer in the task demo
+    &:hover{
+        background-color: $hover-color; // while hover bg-color changes to the mentioned variable 
+                                        //which also common in every line
+    }
+
+}
+
+//mixin styling for circles but with changeable variables for bg-color,height,and width
+@mixin circle-style($bg-color, $height, $width){
+    background-color: $bg-color; //bg-color not common for all the other circle
+    height: $height; //height not common for all the other circle
+    width: $width; //width not common for all the other circle
+    border-radius: 100%; //border radius to max to make it a circle which is common command for all
+    margin: 5px; //margin with common value for all
+    cursor: pointer;
+    &:hover{
+        background-color: $hover-color;
+    }
+}
+
+
+body{
+    margin: 0% auto;
+    width: 100%;
+}
+header{
+    margin: 0%;
+    background-color: $headerandfooter-bg; //bg-color set to from the set variable
+    display: flex; //align to the center
+    justify-content: center;
+    align-items: center;
+
+}
+
+picture{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.lines{
+    margin: 0% auto;
+    margin-top: 30px;
+
+}
+
+//calling the mixin styling for the lines
+//along with bg-color from the set varaible
+.line1{
+    @include line-style($content1-color)   
+}
+.line2{
+    @include line-style($content2-color)
+}
+.line3{
+    @include line-style($content3-color)
+}
+.line4{
+    @include line-style($content4-color)
+}
+
+.circles{
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+//calling the mixin styling for the circles
+//along with bg-color from the set varaible and giving height and width separately
+.circle1{
+    @include circle-style($content1-color,70px ,70px )
+}
+.circle2{
+    @include circle-style($content2-color,80px ,80px )
+}
+.circle3{
+    @include circle-style($content3-color,90px ,90px )
+}
+.circle4{
+    @include circle-style($content4-color,100px ,100px )
+}
+
+//footer styling
+footer{
+    margin: 0%;
+    background-color: $headerandfooter-bg;
+    height: $footer-height;
+}
+
+//media screen to change the styling of the circle from row direction to column when below 620px
+@media screen and (max-width: 620px){
+    .circles{
+        flex-direction: column;
+    }
+}

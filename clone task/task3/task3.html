@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="task3.css">
+    <title>task3</title>
+</head>
+<body>
+
+<!-- header -->
+<header>      
+<!-- picture tag allows more flexibility in specifying image resources -->
+        <picture>
+<!-- The browser will look for the first <source> element where the 
+    media query matches the current viewport width, and then it will 
+    display the proper image -->
+            <source srcset="200.png" media="(max-width:480px)"> <!-- 0px to 480px shows this img -->
+            <source srcset="300.png" media="(max-width:800px)"> <!-- 481px to 800px shows this img -->
+<!-- <img /> tag,its the standard/fallback image.  -->
+            <img src="400.png" alt="400.png"> <!-- any px above the top value it shows this img -->
+        </picture>
+</header>  
+
+<!-- container with lines and circles -->
+    <section class="container">
+        
+        <!-- seperate div tag for lines and circles -->>
+        <div class="lines">  <!-- all the lines -->
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+            <div class="line4"></div>
+        </div>
+
+        <div class="circles"> <!-- all the circles -->
+            <div class="circle1"></div> 
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+            <div class="circle4"></div>
+        </div>
+
+    </section>
+
+    <footer></footer> <!-- footer sevtion -->
+</body>
+</html>
