@@ -1,5 +1,6 @@
 // same bg-color for header and footer 
 $headerandfooter-bg:#8ccff7; 
+$body-bg:rgb(229, 239, 245);
 
 // variables for same color used in lines and circles
 $content1-color:#4e89ae;
@@ -15,7 +16,7 @@ $hover-color:#444;
 // except for bg-color of the lines
 @mixin line-style($bg-color){
     background-color: $bg-color; //bg-color is not common
-    height: 30px; //height is common value for all lines
+    height: 50px; //height is common value for all lines
     width: 100%; //width also common for all lines
     cursor: pointer; // noticed the cursor changes to pointer in the task demo
     &:hover{
@@ -42,6 +43,7 @@ $hover-color:#444;
 body{
     margin: 0% auto;
     width: 100%;
+    background-color: $body-bg;
 }
 header{
     margin: 0%;
