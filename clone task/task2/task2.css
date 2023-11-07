@@ -1,10 +1,10 @@
 
 /* set font and margin for body */
 body{
+    width: 100%;
     font-family: sans-serif;
     margin: 0%;
-    display: flex; /* flex */
-    flex-direction: column; /* set contents in coloumns */
+    background-color: rgb(234, 234, 234);
 }
 
 header{
@@ -14,6 +14,7 @@ header{
     justify-content: space-between;  /* gives space between */
     align-items: center; /* align to the center */
     width: 100%; /* width set to 100% */
+    height: auto;
 }
 
 .logo{
@@ -33,6 +34,9 @@ header{
 
 }
 
+.navigation2{
+    display: none;
+}
 
 nav a{
     text-decoration: none; /* reomoves underline to navigation */
@@ -41,11 +45,19 @@ nav a{
 }
 
 main {
-    margin:0% auto; /* margin 0% and auto to align the container center */
+    width: 1260px;
+    margin:50px auto; /* margin 0% and auto to align the container center */
     margin-top: 30px; /* margin top */
     display: grid; /* grid */
     gap: 10px; /* gaps to the grids */
-    grid-template-columns: 310px repeat(3, 230px); /* 310px to first row and repeat 230px 3 times to the next*/
+    grid-template-columns: 3fr 1fr 1fr ; /* 310px to first row and repeat 230px 3 times to the next*/
+    grid-template-rows: 600px 600px;
+    
+}
+.box1{
+    height: 850px;
+    grid-row: span 2;
+
 }
 
 p {
@@ -54,25 +66,24 @@ p {
     line-height: 20px; /* gap between each lines */
 }
 
+
 .box {
+    background-color: white;
     border: 2px solid rgba(201, 201, 201, 0.276); /* border */
     padding: 20px; /* Add padding to the boxes for spacing */
     display: flex; 
     flex-direction: column; 
     border-radius: 1%; /* gives curve edges to the box border */
-    box-shadow: 4px 4px 2px rgb(201, 201, 201); /* shadow effect to the boxes */
+    box-shadow: 2px 2px 2px rgb(201, 201, 201); /* shadow effect to the boxes */
 
 }
 
-.box1 {
-    padding: 2px;
-    grid-column: span 2; /* it spans over two column */
-    grid-row: span 2; /* it spans over two rows */
-}
+
 
 #text1 {
     margin: 10px; /* margin */
 }
+
 
 .box img{
     margin: 0%;
@@ -97,4 +108,135 @@ p {
     display: flex;
     justify-content: flex-end; /* Aligns the button to the right within the button container */
     margin: 10px; /* Adjust the margin-top as needed to separate the button from the text */
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 90px;
+    padding-bottom: 30px;
+}
+
+@media screen and (max-width:480px){
+
+    body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main{
+        width: auto;
+        margin: 10px;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+
+    .box1{
+        height: auto;
+    }
+    
+    .search{
+        display: none;
+    }
+
+    .navigation1{
+        display: none;
+    }
+
+    .navigation2{
+        display: flex;
+        justify-content: flex-end;
+        padding: 10px;
+    }
+
+    
+}
+
+@media screen and (min-width:481px) and (max-width:800px){
+    body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main{
+        width: auto;
+        margin: 10px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+    }
+
+
+    .box1{
+        height: auto;
+        grid-column: span 2;
+    }
+    
+    .search{
+        display: none;
+    }
+
+    .navigation1{
+        display: none;
+    }
+
+    .navigation2{
+        display: flex;
+        justify-content: flex-end;
+        padding: 10px;
+    }
+
+    
+    
+}
+
+@media screen and (min-width:801px) and (max-width:1024px){
+    body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main{
+        width: auto;
+        margin: 10px;
+        grid-template-columns:2fr 1fr;
+        grid-template-rows: auto;
+        
+    }
+
+
+    .box1{
+        height: 850px;
+        grid-row: span 5;
+    }
+    
+
+}
+
+@media screen and (min-width:1025px) and (max-width:1280px){
+    body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main{
+        width: auto;
+        margin: 10px;
+        grid-template-columns: 3fr 1fr 1fr ; /* 310px to first row and repeat 230px 3 times to the next*/
+        grid-template-rows: 600px 600px;
+
+    }
+    
+    .box1{
+        height: 850px;
+        grid-row: span 2;
+    
+    }
+    
+    
 }
